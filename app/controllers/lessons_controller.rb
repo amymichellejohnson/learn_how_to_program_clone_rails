@@ -1,4 +1,5 @@
 class LessonsController <ApplicationController
+  
   def index
     @lesson = Lesson.all
   end
@@ -40,11 +41,11 @@ class LessonsController <ApplicationController
     @lesson.destroy
     flash[:alert] = "Lesson deleted"
     redirect_to lessons_path
-
   end
 
   private
     def lesson_params
       params.require(:lesson).permit(:name, :content)
     end
+
 end
