@@ -7,8 +7,8 @@ class Lesson < ActiveRecord::Base
     Lesson.all.each_with_index do |lesson, index|
       lessons_hash[lesson] = index
     end
-
     next_value = lessons_hash[self] + 1
+
     if lessons_hash.key(next_value) == nil
       self
     else
@@ -29,8 +29,5 @@ class Lesson < ActiveRecord::Base
     else
       lessons_hash.key(prev_value)
     end
-
-
   end
-
 end
